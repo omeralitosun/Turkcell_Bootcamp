@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f746a944-6e51-4cdb-8f90-6435696b8b3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Turkcell_Bootcamp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homeWork1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homeWork1/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homeWork1/src/main/java/turkcell/Main.java" afterDir="false" />
+    <list default="true" id="f746a944-6e51-4cdb-8f90-6435696b8b3f" name="Changes" comment="Completed">
+      <change afterPath="$PROJECT_DIR$/e-commerce/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/kodlama/io/ecommerce/ECommerceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/test/java/kodlama/io/ecommerce/ECommerceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +49,19 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Omer/IdeaProjects/Turkcell_Bootcamp/homeWork1",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Omer/IdeaProjects/Turkcell_Bootcamp/e-commerce&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Omer\IdeaProjects\Turkcell_Bootcamp\homeWork1\src\main\java\turkcell" />
@@ -107,6 +110,25 @@
       <option name="presentableId" value="Default" />
       <updated>1679146229074</updated>
     </task>
+    <task id="LOCAL-00001" summary="Completed">
+      <created>1679147064649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679147064649</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Completed">
+      <created>1679147165483</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679147165483</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed" />
   </component>
 </project>
