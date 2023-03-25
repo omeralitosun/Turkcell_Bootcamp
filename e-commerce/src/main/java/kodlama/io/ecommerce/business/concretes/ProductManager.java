@@ -1,59 +1,83 @@
 package kodlama.io.ecommerce.business.concretes;
 
 import kodlama.io.ecommerce.business.abstracts.ProductService;
-import kodlama.io.ecommerce.entities.concretes.Product;
-import kodlama.io.ecommerce.repository.abstracts.ProductRepository;
+import kodlama.io.ecommerce.entities.Product;
+import kodlama.io.ecommerce.repository.ProductRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ProductManager implements ProductService {
 
-    ProductRepository repository;
+    private final ProductRepository repository;
 
-    public ProductManager(ProductRepository repository) {
-        this.repository = repository;
+    @Override
+    public Product add(Product product) {
+
+        checkIfProductPrice(product);
+        checkIfProductQuantity(product);
+        checkIfProductDescription(product);
+
+        return repository.save(product);
     }
 
     @Override
-    public void add(Product product) {
-        if(product.getPrice()<0){
-            throw new RuntimeException("Ürünün fiyatı 0'dan küçük olamaz");
-        } else if (product.getQuantity()<0) {
-            throw new RuntimeException("Ürünün miktarı 0'dan küçük olamaz");           
-        } else if (product.getDescription().length()<10 || product.getDescription().length()>50) {
-            throw new RuntimeException("Ürünün açıklaması minimum 10, maksimum 50 karakter olmalı");
-        }else {
-            repository.add(product);
-        }
+    public void delete(int id) {
+
+        checkIfProductExists(id);
+
+        repository.deleteById(id);
     }
 
     @Override
-    public void delete(Product product) {
-        repository.delete(product);
-    }
+    public Product update(int id,Product product) {
 
-    @Override
-    public void update(Product product) {
-        if(product.getPrice()<0){
-            throw new RuntimeException("Ürünün fiyatı 0'dan küçük olamaz");
-        } else if (product.getQuantity()<0) {
-            throw new RuntimeException("Ürünün miktarı 0'dan küçük olamaz");
-        } else if (product.getDescription().length()<10 || product.getDescription().length()>50) {
-            throw new RuntimeException("Ürünün açıklaması minimum 10, maksimum 50 karakter olmalı");
-        }else {
-            repository.update(product);
-        }
+        checkIfProductExists(id);
+        checkIfProductPrice(product);
+        checkIfProductQuantity(product);
+        checkIfProductDescription(product);
+
+        product.setId(id);
+        return repository.save(product);
     }
 
     @Override
     public List<Product> getAll() {
-        return repository.getAll();
+        return repository.findAll();
     }
 
     @Override
     public Product getById(int id) {
-        return repository.getById(id);
+        checkIfProductExists(id);
+        return repository.findById(id).orElseThrow();
+    }
+
+    // Business Rules
+
+    private void checkIfProductPrice(Product product){
+        if(product.getPrice()<=0){
+            throw new RuntimeException("Ürünün fiyatı 0'dan küçük olamaz");
+        }
+    }
+
+    private void checkIfProductQuantity(Product product){
+        if (product.getQuantity()<0) {
+            throw new RuntimeException("Ürünün miktarı 0'dan küçük olamaz");
+        }
+    }
+
+    private void checkIfProductDescription(Product product){
+        if (product.getDescription().length()<10 || product.getDescription().length()>50) {
+            throw new RuntimeException("Ürünün açıklaması minimum 10, maksimum 50 karakter olmalı");
+        }
+    }
+
+    private void checkIfProductExists(int id){
+        if (!repository.existsById(id)){
+            throw new RuntimeException("Böyle bir ürün mevcut değil.");
+        }
     }
 }

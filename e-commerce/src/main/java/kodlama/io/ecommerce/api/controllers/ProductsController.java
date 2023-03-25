@@ -1,38 +1,39 @@
 package kodlama.io.ecommerce.api.controllers;
 
 import kodlama.io.ecommerce.business.concretes.ProductManager;
-import kodlama.io.ecommerce.entities.concretes.Product;
+import kodlama.io.ecommerce.entities.Product;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 public class ProductsController {
 
     ProductManager manager;
 
-    public ProductsController(ProductManager manager) {
-        this.manager = manager;
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product add(@RequestBody Product product){
+        return manager.add(product);
     }
-
-    @PostMapping("/add")
-    public void add(Product product){
-        manager.add(product);
+    @PutMapping("/{id}")
+    public Product update(@PathVariable int id,@RequestBody Product product){
+        return manager.update(id,product);
     }
-    @PostMapping("/update")
-    public void update(Product product){
-        manager.update(product);
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int id){
+        manager.delete(id);
     }
-    @PostMapping("/delete")
-    public void delete(Product product){
-        manager.delete(product);
-    }
-    @GetMapping(value = "/get/{id}")
+    @GetMapping("/{id}")
     public Product getById(@PathVariable("id") int id){
         return manager.getById(id);
     }
-    @GetMapping("/getAll")
+    @GetMapping
     public List<Product> findAll(){
         return manager.getAll();
     }
