@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Turkcell_Bootcamp.iml" filepath="$PROJECT_DIR$/Turkcell_Bootcamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adapter-pattern-demo.iml" filepath="$PROJECT_DIR$/adapter-pattern-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/e-commerce/e-commerce.iml" filepath="$PROJECT_DIR$/e-commerce/e-commerce.iml" />
       <module fileurl="file://$PROJECT_DIR$/homeWork1.iml" filepath="$PROJECT_DIR$/homeWork1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starbucks-register.iml" filepath="$PROJECT_DIR$/starbucks-register.iml" />
     </modules>
   </component>
 </project>

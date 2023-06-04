@@ -1,11 +1,16 @@
 package kodlama.io.ecommerce.business.concretes;
 
 import kodlama.io.ecommerce.business.abstracts.ProductService;
+import kodlama.io.ecommerce.business.dto.requests.create.CreateProductRequest;
+import kodlama.io.ecommerce.business.dto.responses.create.CreateProductResponse;
+import kodlama.io.ecommerce.entities.Category;
 import kodlama.io.ecommerce.entities.Product;
 import kodlama.io.ecommerce.repository.ProductRepository;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,15 +18,23 @@ import java.util.List;
 public class ProductManager implements ProductService {
 
     private final ProductRepository repository;
+    private final ModelMapper mapper;
 
     @Override
-    public Product add(Product product) {
+    public CreateProductResponse add(CreateProductRequest request) {
+
+        Product product = mapper.map(request,Product.class);
+        product.setId(0);
 
         checkIfProductPrice(product);
         checkIfProductQuantity(product);
         checkIfProductDescription(product);
 
-        return repository.save(product);
+        repository.save(product);
+
+        CreateProductResponse response = mapper.map(product,CreateProductResponse.class);
+
+        return response;
     }
 
     @Override

@@ -1,6 +1,8 @@
 package kodlama.io.ecommerce.api.controllers;
 
 import kodlama.io.ecommerce.business.concretes.ProductManager;
+import kodlama.io.ecommerce.business.dto.requests.create.CreateProductRequest;
+import kodlama.io.ecommerce.business.dto.responses.create.CreateProductResponse;
 import kodlama.io.ecommerce.entities.Product;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -10,15 +12,15 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductsController {
 
     ProductManager manager;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product add(@RequestBody Product product){
-        return manager.add(product);
+    public CreateProductResponse add(@RequestBody CreateProductRequest request){
+        return manager.add(request);
     }
     @PutMapping("/{id}")
     public Product update(@PathVariable int id,@RequestBody Product product){
@@ -30,11 +32,12 @@ public class ProductsController {
         manager.delete(id);
     }
     @GetMapping("/{id}")
-    public Product getById(@PathVariable("id") int id){
+    public Product getById(@PathVariable int id){
         return manager.getById(id);
     }
     @GetMapping
     public List<Product> findAll(){
         return manager.getAll();
     }
+
 }

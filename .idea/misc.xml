@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/homeWork1/pom.xml" />
         <option value="$PROJECT_DIR$/e-commerce/pom.xml" />
+        <option value="$PROJECT_DIR$/adapter-pattern-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/starbucks-register/pom.xml" />
       </list>
     </option>
   </component>

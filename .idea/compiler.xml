@@ -7,13 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="e-commerce" />
+        <module name="adapter-pattern-demo" />
+        <module name="starbucks-register" />
         <module name="homeWork1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="adapter-pattern-demo" target="19" />
       <module name="deneme" target="17" />
       <module name="e-commerce" target="17" />
       <module name="homeWork1" target="17" />
+      <module name="starbucks-register" target="19" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
